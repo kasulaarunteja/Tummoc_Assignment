@@ -1,12 +1,11 @@
 const mongoose = require('mongoose')
-
 const bcrypt = require('bcryptjs')
 
 const userSchema = new mongoose.Schema(
   {
     name: { type: String },
-    email: { type: String, require: true, unique: true },
-    password: { type: String, require: true },
+    email: { type: String, required: true, unique: true },
+    password: { type: String, required: true },
   },
   {
     versionKey: false,
@@ -22,7 +21,7 @@ userSchema.pre('save', function (next) {
   return next()
 })
 
-userSchema.method.checkPassword = function (password) {
+userSchema.methods.checkPassword = function (password) {
   return bcrypt.compareSync(password, this.password)
 }
 
