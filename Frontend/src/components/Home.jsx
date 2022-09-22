@@ -2,7 +2,8 @@ import React from 'react';
 
 const Home = () => {
     return (
-        <div>
+        <div className='App'>
+            <img src="img/download.png" />
             <h2>Welcome to Tummoc</h2>
         </div>
     );

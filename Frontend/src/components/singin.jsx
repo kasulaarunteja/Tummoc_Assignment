@@ -27,12 +27,12 @@ const Singin = () => {
 
   const handleClick = (e) => {
     e.preventDefault();
-     console.log(user)
+    //  console.log(user)
     setRegistered(false);
     axios
       .post("http://localhost:8080/register", user)
       .then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         alert("register successfull");
         setRegistered(true);
       })
