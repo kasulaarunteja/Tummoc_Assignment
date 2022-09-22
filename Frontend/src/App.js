@@ -4,7 +4,7 @@ import AllRoures from './Routes/AllRoures';
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <h2>hello world my new project</h2>
       <AllRoures/>
     </div>
