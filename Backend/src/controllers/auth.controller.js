@@ -22,7 +22,7 @@ const register = async (req, res) => {
 
 const login = async (req, res) => {
   try {
-    const user = await User.findOne({ email: req.body.email }).lean().exec()
+    const user = await User.findOne({ email: req.body.email })
     if (!user)
       return res
         .status(400)
