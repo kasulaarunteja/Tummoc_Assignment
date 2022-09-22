@@ -30,7 +30,7 @@ app.use(
 );
 
 app.get('/', (req,res) => {
-  return res.send('hello good')
+  return res.send('hello world')
 })
 // /register
 app.post('/register', register)
