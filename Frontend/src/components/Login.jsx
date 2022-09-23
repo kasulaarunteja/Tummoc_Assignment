@@ -4,10 +4,26 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import {useDispatch, useSelector} from "react-redux";
 import { fetchToken } from "../Redux/action";
+import axios from "axios";
 
 
 
 const Login = () => {
+
+  //  const [godata, setGodata] = useState("") 
+
+  // const google = () => {
+  //   axios.post("https://myassignmentgoogle.herokuapp.com/auth/google", "_self").then((res) => {
+  //     setGodata(res.data);
+  //   }).catch((er) => {
+  //     console.log(er)
+  //   })
+  // }
+
+  const google =()=> {
+    window.open("https://myassignmentgoogle.herokuapp.com/auth/google", "_self")
+  }
+
 
   const [data, setData] = useState({
     email:"",
@@ -25,7 +41,7 @@ const Login = () => {
 
   useEffect (() => {
     if(token !== null){
-      navigate("/home")
+      return true;
     }
   }, [token]);
 
@@ -37,10 +53,13 @@ const Login = () => {
   }
 
    const handleChange = (e) => {
-    setData({
-        ...data,
-        [e.target.value] : e.target.value
-    })
+    const {id, value} = e.target;
+    setData({...data, [id]: value});
+
+    // setData({
+    //     ...data,
+    //     [e.target.value] : e.target.value
+    // })
    }
 
 
@@ -84,6 +103,9 @@ const Login = () => {
             <button type="submit" className="btn btn-primary">
               Submit
             </button>
+            <button className="btn btn-primary ww-100 mb-4" onClick={google}>
+              <span className="fa fa-google me-4">
+                </span> sing in with Google</button>
           </div>
         </div>
       </form>
