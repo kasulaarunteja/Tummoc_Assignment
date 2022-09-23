@@ -30,7 +30,7 @@ const Singin = () => {
     //  console.log(user)
     setRegistered(false);
     axios
-      .post("http://localhost:8080/register", user)
+      .post("https://myassignmentgoogle.herokuapp.com/register", user)
       .then((res) => {
         // console.log(res.data);
         alert("register successfull");

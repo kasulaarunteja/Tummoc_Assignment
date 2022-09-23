@@ -30,7 +30,7 @@ const fetchToken = (user) => {
   return (dispatch) => {
     dispatch(fetchauthRequest())
     axios
-      .post('http://localhost:8080/login', {
+      .post('https://myassignmentgoogle.herokuapp.com/login', {
         email: email,
         password: password,
       })
